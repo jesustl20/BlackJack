@@ -1,6 +1,7 @@
-package Vista;
+package vista;
 
-import java.awt.BorderLayout;
+import controlador.Controlador;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -12,17 +13,23 @@ import javax.swing.JButton;
 
 public class Vista extends JFrame {
 
-	private JPanel contentPane;
+	public final JButton pedir;
+	public final JButton plantarse;
+	public final JLabel lbl1;
+	public JPanel contentPane;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+
+
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					Vista frame = new Vista();
 					frame.setVisible(true);
+					Controlador ctrl = new Controlador(frame);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -40,8 +47,8 @@ public class Vista extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JLabel lbl1 = new JLabel("");
+
+		lbl1 = new JLabel("");
 		lbl1.setForeground(Color.BLACK);
 		lbl1.setBackground(Color.WHITE);
 		lbl1.setBounds(51, 54, 127, 180);
@@ -160,13 +167,13 @@ public class Vista extends JFrame {
 		lbl24.setBackground(Color.WHITE);
 		lbl24.setBounds(735, 668, 127, 180);
 		contentPane.add(lbl24);
-		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(1162, 385, 89, 23);
-		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("New button");
-		btnNewButton_1.setBounds(1162, 419, 89, 23);
-		contentPane.add(btnNewButton_1);
+
+		pedir = new JButton("New button");
+		pedir.setBounds(1162, 385, 89, 23);
+		contentPane.add(pedir);
+
+		plantarse = new JButton("New button");
+		plantarse.setBounds(1162, 419, 89, 23);
+		contentPane.add(plantarse);
 	}
 }
